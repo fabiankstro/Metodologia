@@ -5,6 +5,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import Modelo.Conection;
+import Vista.*;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -13,7 +14,7 @@ import javax.swing.JTextField;
  * @author bberc
  */
 public class Controlador {
-    Conection conection = new Conection();
+    
     public void LogIn (JFormattedTextField txt_user, JPasswordField txt_Pass){
         if (txt_user.getText().length() != 0 && txt_Pass.getPassword().length != 0) {
             /*Code to stored procedure here*/
@@ -41,6 +42,20 @@ public class Controlador {
         Vista.LogIn li = new Vista.LogIn();
         li.setLocationRelativeTo(null);
         li.setVisible(true);
+        frame.dispose();
+    }
+    
+    public void BackAdministration(JFrame frame){
+        Administracion admin = new Administracion();
+        admin.setLocationRelativeTo(null);
+        admin.setVisible(true);
+        frame.dispose();
+    }
+    
+    public void BackRework (JFrame frame){
+        Rework rework = new Rework();
+        rework.setLocationRelativeTo(null);
+        rework.setVisible(true);
         frame.dispose();
     }
 }

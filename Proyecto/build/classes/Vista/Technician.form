@@ -257,6 +257,9 @@
           <Dimension value="[133, 41]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bnt_LogOutActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

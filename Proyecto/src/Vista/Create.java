@@ -6,13 +6,15 @@
 package Vista;
 
 import Idiomas.Idioma;
-
+import Controlador.Controlador;
 /**
  *
  * @author castrorj
  */
 public class Create extends javax.swing.JFrame {
 
+    Controlador controlador = new Controlador();
+    
     public void Language (){
         Idioma idiom = new Idioma();
         if (LogIn.lang != "" && LogIn.Country != ""){
@@ -475,6 +477,11 @@ public class Create extends javax.swing.JFrame {
         bnt_Cancel.setMaximumSize(new java.awt.Dimension(133, 41));
         bnt_Cancel.setMinimumSize(new java.awt.Dimension(133, 41));
         bnt_Cancel.setPreferredSize(new java.awt.Dimension(133, 41));
+        bnt_Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_CancelActionPerformed(evt);
+            }
+        });
 
         txt_EmpNo.setEditable(false);
         txt_EmpNo.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
@@ -527,6 +534,11 @@ public class Create extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bnt_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_CancelActionPerformed
+        // TODO add your handling code here:
+        controlador.BackAdministration(this);
+    }//GEN-LAST:event_bnt_CancelActionPerformed
 
     /**
      * @param args the command line arguments

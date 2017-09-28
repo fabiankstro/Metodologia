@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Controlador.Controlador;
 /**
  *
  * @author castrorj
  */
 public class Rework extends javax.swing.JFrame {
 
+    Controlador controlador = new Controlador();
     /**
      * Creates new form Rework
      */
@@ -45,11 +46,21 @@ public class Rework extends javax.swing.JFrame {
         btn_Start.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
         btn_Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/play-button.png"))); // NOI18N
         btn_Start.setText("Start Activity");
+        btn_Start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_StartActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_Start, new java.awt.GridBagConstraints());
 
         btn_End.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
         btn_End.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/stop.png"))); // NOI18N
         btn_End.setText("End Activity");
+        btn_End.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EndActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_End, new java.awt.GridBagConstraints());
 
         bnt_LogOut.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
@@ -58,6 +69,11 @@ public class Rework extends javax.swing.JFrame {
         bnt_LogOut.setMaximumSize(new java.awt.Dimension(133, 41));
         bnt_LogOut.setMinimumSize(new java.awt.Dimension(133, 41));
         bnt_LogOut.setPreferredSize(new java.awt.Dimension(133, 41));
+        bnt_LogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_LogOutActionPerformed(evt);
+            }
+        });
         jPanel1.add(bnt_LogOut, new java.awt.GridBagConstraints());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -83,6 +99,27 @@ public class Rework extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bnt_LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_LogOutActionPerformed
+        // TODO add your handling code here:
+        controlador.BackLogIn(this);
+    }//GEN-LAST:event_bnt_LogOutActionPerformed
+
+    private void btn_StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_StartActionPerformed
+        // TODO add your handling code here:
+        RwkStart rwkstart = new RwkStart();
+        rwkstart.setLocationRelativeTo(null);
+        rwkstart.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_StartActionPerformed
+
+    private void btn_EndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EndActionPerformed
+        // TODO add your handling code here:
+        RwkEnd rwkend = new RwkEnd();
+        rwkend.setLocationRelativeTo(null);
+        rwkend.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_EndActionPerformed
 
     /**
      * @param args the command line arguments

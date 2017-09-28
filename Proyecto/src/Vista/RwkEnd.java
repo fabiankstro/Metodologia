@@ -5,12 +5,15 @@
  */
 package Vista;
 
+import Controlador.Controlador;
+
 /**
  *
  * @author castrorj
  */
 public class RwkEnd extends javax.swing.JFrame {
 
+    Controlador controlador = new Controlador();
     /**
      * Creates new form RwkStart
      */
@@ -92,6 +95,11 @@ public class RwkEnd extends javax.swing.JFrame {
         bnt_Cancel.setMaximumSize(new java.awt.Dimension(133, 41));
         bnt_Cancel.setMinimumSize(new java.awt.Dimension(133, 41));
         bnt_Cancel.setPreferredSize(new java.awt.Dimension(133, 41));
+        bnt_Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_CancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,17 +148,23 @@ public class RwkEnd extends javax.swing.JFrame {
                     .addComponent(txt_Reworker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_Reworker))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bnt_Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_End)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_Serial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbl_Serial)))
+                        .addComponent(lbl_Serial))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(bnt_Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_End)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bnt_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_CancelActionPerformed
+        // TODO add your handling code here:
+        controlador.BackRework(this);
+    }//GEN-LAST:event_bnt_CancelActionPerformed
 
     /**
      * @param args the command line arguments

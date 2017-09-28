@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Controlador;
 import Idiomas.Idioma;
 
 /**
@@ -13,6 +14,8 @@ import Idiomas.Idioma;
  */
 public class DeActivate extends javax.swing.JFrame {
 
+    Controlador controlador = new Controlador();
+    
     public void Language (){
         Idioma idiom = new Idioma();
         if (LogIn.lang != "" && LogIn.Country != ""){
@@ -81,7 +84,7 @@ public class DeActivate extends javax.swing.JFrame {
         rdb_DeActivate = new javax.swing.JRadioButton();
         txt_EmpNo = new javax.swing.JTextField();
         lbl_EmpNo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_Cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -192,16 +195,16 @@ public class DeActivate extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(149, 149, 149)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_BU_Dept, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_DeptNo)
-                    .addComponent(lbl_Area_Dept))
+                    .addComponent(lbl_Area_Dept)
+                    .addComponent(lbl_BU_Dept))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(cmb_Area_Dept, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cmb_Dept, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(cmb_BU_Dept, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,7 +221,7 @@ public class DeActivate extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_DeptNo)
                     .addComponent(cmb_Dept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Department", jPanel3);
@@ -323,18 +326,16 @@ public class DeActivate extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(175, Short.MAX_VALUE)
+                .addContainerGap(131, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(27, 27, 27)
-                            .addComponent(lbl_Area_emp)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cmb_Area_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(lbl_BU_emp)
-                            .addGap(12, 12, 12)
-                            .addComponent(cmb_BU_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(lbl_Area_emp)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmb_Area_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(lbl_BU_emp)
+                        .addGap(12, 12, 12)
+                        .addComponent(cmb_BU_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(lbl_Employee)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -414,9 +415,14 @@ public class DeActivate extends javax.swing.JFrame {
         lbl_EmpNo.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
         lbl_EmpNo.setText("Employee No");
 
-        jButton1.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/error.png"))); // NOI18N
-        jButton1.setText("Cancel");
+        btn_Cancel.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        btn_Cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/error.png"))); // NOI18N
+        btn_Cancel.setText("Cancel");
+        btn_Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -443,7 +449,7 @@ public class DeActivate extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jButton1)
+                .addComponent(btn_Cancel)
                 .addGap(151, 151, 151)
                 .addComponent(btn_Save)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -465,12 +471,17 @@ public class DeActivate extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_Save)
-                    .addComponent(jButton1))
+                    .addComponent(btn_Cancel))
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelActionPerformed
+        // TODO add your handling code here:
+        controlador.BackAdministration(this);
+    }//GEN-LAST:event_btn_CancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -510,6 +521,7 @@ public class DeActivate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Active;
+    private javax.swing.JButton btn_Cancel;
     private javax.swing.JButton btn_Save;
     private javax.swing.JComboBox<String> cmb_Area;
     private javax.swing.JComboBox<String> cmb_Area_Dept;
@@ -526,7 +538,6 @@ public class DeActivate extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmb_Prod_No;
     private javax.swing.JComboBox<String> cmb_Task;
     private javax.swing.JComboBox<String> cmb_employee;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

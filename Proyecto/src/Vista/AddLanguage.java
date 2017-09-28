@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Controlador.Controlador;
 /**
  *
  * @author castrorj
  */
 public class AddLanguage extends javax.swing.JFrame {
 
+    Controlador controlador = new Controlador();
     /**
      * Creates new form AddLanguage
      */
@@ -128,6 +129,11 @@ public class AddLanguage extends javax.swing.JFrame {
         bnt_Cancel.setMaximumSize(new java.awt.Dimension(133, 41));
         bnt_Cancel.setMinimumSize(new java.awt.Dimension(133, 41));
         bnt_Cancel.setPreferredSize(new java.awt.Dimension(133, 41));
+        bnt_Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_CancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,6 +186,11 @@ public class AddLanguage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bnt_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_CancelActionPerformed
+        // TODO add your handling code here:
+        controlador.BackLogIn(this);
+    }//GEN-LAST:event_bnt_CancelActionPerformed
 
     /**
      * @param args the command line arguments

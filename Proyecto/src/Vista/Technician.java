@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Controlador.Controlador;
 /**
  *
  * @author castrorj
  */
 public class Technician extends javax.swing.JFrame {
 
+    Controlador controlador = new Controlador();
     /**
      * Creates new form Technician
      */
@@ -87,6 +88,11 @@ public class Technician extends javax.swing.JFrame {
         bnt_LogOut.setMaximumSize(new java.awt.Dimension(133, 41));
         bnt_LogOut.setMinimumSize(new java.awt.Dimension(133, 41));
         bnt_LogOut.setPreferredSize(new java.awt.Dimension(133, 41));
+        bnt_LogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_LogOutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,6 +168,11 @@ public class Technician extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bnt_LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_LogOutActionPerformed
+        // TODO add your handling code here:
+        controlador.BackLogIn(this);
+    }//GEN-LAST:event_bnt_LogOutActionPerformed
 
     /**
      * @param args the command line arguments

@@ -8,12 +8,14 @@ package Vista;
 import Idiomas.Idioma;
 import java.awt.Font;
 import Vista.LogIn;
+import Controlador.Controlador;
 /**
  *
  * @author castrorj
  */
 public class Administracion extends javax.swing.JFrame {
 
+    Controlador controlador = new Controlador();
     public void Language (){
         Idioma idiom = new Idioma();
         if (LogIn.lang != "" && LogIn.Country != ""){
@@ -79,6 +81,11 @@ public class Administracion extends javax.swing.JFrame {
         btn_Report.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
         btn_Report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/progress-report.png"))); // NOI18N
         btn_Report.setText("Reports");
+        btn_Report.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ReportActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_Report);
 
         btn_LogOut.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
@@ -87,6 +94,11 @@ public class Administracion extends javax.swing.JFrame {
         btn_LogOut.setMaximumSize(new java.awt.Dimension(113, 41));
         btn_LogOut.setMinimumSize(new java.awt.Dimension(113, 41));
         btn_LogOut.setPreferredSize(new java.awt.Dimension(113, 41));
+        btn_LogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LogOutActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_LogOut);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -111,11 +123,32 @@ public class Administracion extends javax.swing.JFrame {
 
     private void btn_CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CreateActionPerformed
         // TODO add your handling code here:
+        Create create = new Create();
+        create.setLocationRelativeTo(null);
+        create.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_CreateActionPerformed
 
     private void btn_ActivateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActivateActionPerformed
         // TODO add your handling code here:
+        DeActivate act = new DeActivate();
+        act.setLocationRelativeTo(null);
+        act.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_ActivateActionPerformed
+
+    private void btn_LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LogOutActionPerformed
+        // TODO add your handling code here:
+        controlador.BackLogIn(this);
+    }//GEN-LAST:event_btn_LogOutActionPerformed
+
+    private void btn_ReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ReportActionPerformed
+        // TODO add your handling code here:
+        Reports report = new Reports();
+        report.setLocationRelativeTo(null);
+        report.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_ReportActionPerformed
 
     /**
      * @param args the command line arguments

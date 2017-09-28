@@ -78,12 +78,14 @@
                   <Component id="lbl_Reworker" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bnt_Cancel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn_End" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="txt_Serial" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbl_Serial" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="bnt_Cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_End" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -236,6 +238,9 @@
           <Dimension value="[133, 41]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bnt_CancelActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
